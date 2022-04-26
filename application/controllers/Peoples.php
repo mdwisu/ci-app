@@ -34,7 +34,7 @@ class Peoples extends CI_Controller
         $this->load->view('peoples/index', $data);
         $this->load->view('templates/footer');
     }
-
+// a
     public function delete($id)
     {
         $this->peoples->deletePeople($id);
