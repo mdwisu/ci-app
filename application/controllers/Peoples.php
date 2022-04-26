@@ -29,7 +29,6 @@ class Peoples extends CI_Controller
 
         $data['start'] = $this->uri->segment(3);
         $data['peoples'] = $this->peoples->getPeoples($config['per_page'], $data['start'], $data['keyword']);
-// asdfsdaf
         $this->load->view('templates/header', $data);
         $this->load->view('peoples/index', $data);
         $this->load->view('templates/footer');
