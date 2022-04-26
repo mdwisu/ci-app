@@ -6,8 +6,11 @@ class Peoples_model extends CI_Model
         return $this->db->get('peoples')->result_array();
     }
 
-    public function getpeoples($limit, $offset)
+    public function getpeoples($limit, $offset, $keyword = null)
     {
+        if ($keyword) {
+            $this->db->like('name', $keyword);
+        }
         return $this->db->get('peoples', $limit, $offset)->result_array();
     }
 

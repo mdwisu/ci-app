@@ -1,10 +1,18 @@
 <div class="container">
+    <h3 class="mt-3">List of People</h3>
     <div class="row">
         <div class="col-md-10">
 
-
-            <h3>List of People</h3>
-
+            <div class="row col-md-5">
+                <form action="<?= base_url('peoples')?>" method="POST">
+                    <div class="input-group mb-3">
+                        <input type="text" autofocus autocomplete="off" class="form-control" placeholder="Sarch Keyword" name="keyword">
+                        <div class="input-group-append">
+                            <input class="btn btn-primary" type="submit" name="submit">
+                        </div>
+                    </div>
+                </form>
+            </div>
             <table class="table">
                 <thead>
                     <tr>
@@ -15,21 +23,21 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($peoples as $peo) :?>
-                    <tr>
-                        <th><?= ++$start?></th>
-                        <td><?= $peo['name'];?></td>
-                        <td><?= $peo['email'];?></td>
-                        <td>
-                            <a href="" class="badge btn-warning">detail</a>
-                            <a href="<?= base_url("peoples/edit")?>" class="badge btn-success">edit</a>
-                            <a href="<?= base_url("peoples/delete/")?><?= $peo['id'];?>" class="badge btn-danger">delete</a>
-                        </td>
-                    </tr>
-                    <?php endforeach;?>
+                    <?php foreach ($peoples as $peo) : ?>
+                        <tr>
+                            <th><?= ++$start ?></th>
+                            <td><?= $peo['name']; ?></td>
+                            <td><?= $peo['email']; ?></td>
+                            <td>
+                                <a href="" class="badge btn-warning">detail</a>
+                                <a href="<?= base_url("peoples/edit") ?>" class="badge btn-success">edit</a>
+                                <a href="<?= base_url("peoples/delete/") ?><?= $peo['id']; ?>" class="badge btn-danger">delete</a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
-            <?= $this->pagination->create_links();?>
+            <?= $this->pagination->create_links(); ?>
         </div>
     </div>
 </div>
