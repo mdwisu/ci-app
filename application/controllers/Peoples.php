@@ -21,7 +21,7 @@ class Peoples extends CI_Controller
         }
 
         // config
-        $config['total_rows'] = $this->peoples->countAllPeoples();
+        $config['total_rows'] = $this->db->count_all_results();
         $config['per_page'] = 8;
        
         // initialize
