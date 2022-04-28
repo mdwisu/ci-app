@@ -13,6 +13,7 @@
                     </div>
                 </form>
             </div>
+            <h5>Result : <?= $total_rows;?></h5>
             <table class="table">
                 <thead>
                     <tr>
@@ -23,6 +24,15 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php if (empty($peoples)) :?>
+                        <tr>
+                            <td colspan="4">
+                                <div class="alert alert-danger" role="alert">
+                                    data not found
+                                </div>
+                            </td>   
+                        </tr>
+                    <?php endif;?>
                     <?php foreach ($peoples as $peo) : ?>
                         <tr>
                             <th><?= ++$start ?></th>
